@@ -11,9 +11,9 @@ int main (void){
 	Paint_Colour(White);
 
 	SDC_SPI_Init();
-	_msDelay(3000);
+	_msDelay(1000);
 	FAT16_INIT();
-	_msDelay(3000);
+	_msDelay(1000);
 	Paint_Colour(White);
 
 	InitEvtHandler();
@@ -41,5 +41,15 @@ int main (void){
 		//}
 		sprintf(a,"%d", RaiseCount);
 		WriteText5x8(20, 100, a, Black);
+		sprintf(a,"%d milli seconds", ClickTimeStamp.tpmsec);
+		WriteText5x8(20, 120, a, Black);
+		sprintf(a,"%d seconds", ClickTimeStamp.tpsec);
+		WriteText5x8(20, 140, a, Black);
+		sprintf(a,"%d minutes", ClickTimeStamp.tpmin);
+		WriteText5x8(20, 160, a, Black);
+		sprintf(a,"%d hours", ClickTimeStamp.tphr);
+		WriteText5x8(20, 180, a, Black);
+		sprintf(a,"%d click", ClickEvent);
+		WriteText5x8(20, 220, a, Black);
 	}
 }

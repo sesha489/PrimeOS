@@ -29,7 +29,7 @@ void FAT16_INIT(void){
 	Paint_Colour(White);
 	WriteText5x8(10, 10, "SD Card initialized", Black);
 	Read_SDC(ReadData, 0, 512);
-	_msDelay(3000);
+	_msDelay(1000);
 	Paint_Colour(White);
 	DisplayCache();
 
@@ -40,7 +40,7 @@ void FAT16_INIT(void){
 	addressPointer = addressPointer * 512;
 	partitionEntry = addressPointer;
 
-	_msDelay(3000);
+	_msDelay(1000);
 	Paint_Colour(White);
 	Read_SDC(ReadData, partitionEntry, 512);
 	Paint_Colour(White);
@@ -65,7 +65,7 @@ void FAT16_INIT(void){
 	RootDirEntry = FAT2Entry + ((uint32_t)mBR.SectorsPerFAT * (uint32_t)mBR.BytesPerSector);
 	DataEntry = RootDirEntry + ((uint32_t)mBR.MaxRootEntries * 32);
 
-	_msDelay(3000);
+	_msDelay(1000);
 	Paint_Colour(White);
 	WriteText5x8(5, 10, "File system info", Black);
 	WriteText5x8(5, 25, "FAT16 file system found and initiated", Black);
